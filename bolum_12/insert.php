@@ -1,3 +1,6 @@
+<?php require 'header.php'?>
+
+
 <?php
 /*
     $sorgu = $db->prepare('INSERT INTO dersler SET 

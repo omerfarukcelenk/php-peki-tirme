@@ -14,6 +14,11 @@
             break;
         case 'oku':
             require_once 'oku.php';
-            break;    
+            break;   
+        case 'guncelle':
+            require_once 'guncelle.php';
+            break;     
+        case 'sil':
+            require_once 'sil.php';
+            break;       
     }
-?>

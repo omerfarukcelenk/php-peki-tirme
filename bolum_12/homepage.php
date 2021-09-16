@@ -1,4 +1,4 @@
-<a href="index.php?sayfa=insert">[İçerik ekle]</a>
+<?php require 'header.php'?>
 
 <h3>Ders Listesi</h3>
 
@@ -17,7 +17,7 @@
     $dersler = $sorgu->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
-
+<?php if($dersler): ?>
 <ul>
     <?php foreach ($dersler as $ders): ?>
         <li>
@@ -25,10 +25,15 @@
             <?php if ($ders['onay'] == 1): ?>
             <a href="index.php?sayfa=oku&id=<?php echo $ders['id'] ?>">[OKU]</a>
             <?php endif; ?>
-            <a href="">[DÜZENLE]</a>
-            <a href="">[SİL]</a>
+            <a href="index.php?sayfa=guncelle&id=<?php echo $ders['id'] ?>">[DÜZENLE]</a>
+            <a href="index.php?sayfa=sil&id=<?php echo $ders['id'] ?>">[SİL]</a>
 
         </li>
     <?php endforeach; ?>
 
 </ul>
+<?php else: ?>
+    <div>
+        Henüz eklenmiş ders bulunmuyor!
+    </div>
+<?php endif; ?>
